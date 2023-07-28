@@ -1,0 +1,61 @@
+import { useState } from "react";
+//components
+import Header from "./components/header/Header";
+import Home from "./components/home/Home";
+
+import { Box } from "@mui/material";
+import DataProvider from "./context/DataProvider";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
+import DetailView from "./components/details/DetailView";
+
+import Cart from "./components/cart/Cart";
+import Footer from "./components/footer/Footer";
+import DetailView2 from "./components/details/DetailView2";
+import LoadingBar from "react-top-loading-bar";
+import DeliveryRequest from "./components/pages/DeliveryRequest";
+import ErrorPage from "./components/pages/ErrorPage";
+import PrivacyPolicy from "./components/pages/PrivacyPolicy";
+import OrderDetails from "./components/details/OrderDetails";
+import About from "./components/pages/About";
+import Contact from "./components/pages/Contact";
+import TermsOfUse from "./components/pages/TermsOfUse";
+import Security from "./components/pages/Security";
+
+
+function App() {
+  const [progress, setProgress] = useState(0);
+
+  return (
+    <DataProvider>
+      <BrowserRouter>
+        {/* Adding in top level component */}
+        <Toaster />
+        <LoadingBar color="#fb641b" height={3} progress={progress} />
+        <Header />
+        <Box style={{ marginTop: 54 }}>
+          <Routes>
+            <Route path="/" element={<Home setProgress={setProgress} />} />
+            <Route path="/product/:id" element={<DetailView setProgress={setProgress} />}/>
+            <Route path="/electronicsProduct/:id" element={<DetailView2 />} />
+            <Route path="/cart" element={<Cart setProgress={setProgress} />} />
+            <Route path="/deliveryForm" element={<DeliveryRequest />} />
+            <Route path="/orders/details" element={<OrderDetails />} />
+            <Route path="/pages/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/pages/about" element={<About />} />
+            <Route path="/pages/contact" element={<Contact />} />
+            <Route path="/pages/termsofuse" element={<TermsOfUse />} />
+            <Route path="/pages/security" element={<Security />} />
+            <Route path="/pages/contact" element={<Contact/>}/>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Box>
+        <Footer />
+      </BrowserRouter>
+    </DataProvider>
+  );
+}
+
+export default App;

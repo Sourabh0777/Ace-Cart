@@ -1,0 +1,80 @@
+/* Terms of Use Page Styles */
+
+.terms-of-use-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  
+  .terms-of-use-heading {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .terms-of-use-text {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 30px;
+  }
+  
+  .terms-of-use-section {
+    margin-bottom: 40px;
+  }
+  
+  .terms-of-use-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .terms-of-use-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: 20px;
+  }
+  
+  .terms-of-use-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .terms-of-use-cta {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .terms-of-use-cta a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5500;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .terms-of-use-cta a:hover {
+    background-color: #cc4400;
+  }
+  
+  /* Responsive Styles */
+  
+  @media screen and (max-width: 768px) {
+    .terms-of-use-container {
+      padding: 20px;
+    }
+  
+    .terms-of-use-heading {
+      font-size: 24px;
+    }
+  
+    .terms-of-use-text,
+    .terms-of-use-section p {
+      font-size: 14px;
+    }
+  }
+  
